@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block body %}
+    <h2>Music</h2>
+    <audio controls="controls" autoplay="autoplay" src="/static/music/AllThingsGo.wav"></audio>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            Results:
+            <pre>
+                {% for message in messages %}
+{{ message }}
+                {% endfor %}
+            </pre>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+{% block nav %}
+<li><a href="{{url_for('index')}}">back</a></li>
+{% endblock %}
